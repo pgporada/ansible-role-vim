@@ -10,10 +10,10 @@
 
 - name: Define vim packages
   set_fact:
-    vim_package: "{{ __vim_package | list }}"
+    vim_package: "{{ __vim_package }}"
   when: vim_package is not defined
 
 - name: Install vim
-  pkg:
-    name: "{{vim_package}}"
+  package:
+    name: "{{ vim_package }}"
     state: present
