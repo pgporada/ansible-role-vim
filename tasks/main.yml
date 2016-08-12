@@ -14,6 +14,52 @@
   when: vim_package is not defined
 
 - name: Install vim
+  become: true
+  become_method: sudo
   package:
     name: "{{ vim_package }}"
     state: present
+
+- name: Setup the vim config folders
+  file:
+    state: directory
+    recurse: yes
+    path: "~/.vim/{{ item }}"
+  with_items:
+    - autoload
+    - bundle
+    - colors
+    - compiler
+    - ftplugin
+    - indent
+    - keymap
+    - lang
+    - macros
+    - plugin
+    - syntax
+    - tools
+
+- name: Check if .vimrc exists
+  stat:
+    path: "~/.vimrc"
+  register: stat_vim
+
+- name: Ensure .vimrc exists
+  file:
+    state: touch
+    path: "~/.vimrc"
+  when: stat_vim.stat.islnk is undefined and stat_vim.stat.islnk == False
+
+- name: Install Pathogen
+  get_url: 
+    url: https://tpo.pe/pathogen.vim
+    dest: "~/.vim/autoload/pathogen.vim"
+    mode: 0664
+
+- name: Install plugin list
+  git:
+    repo: "https://github.com/{{ item.name }}/{{ item.repo }}.git"
+    dest: "~/.vim/bundle/{{ item.repo }}"
+    update: no
+  with_items:
+    - "{{ vim_plugins }}"

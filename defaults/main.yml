@@ -1,2 +1,8 @@
 ---
-# defaults file for ansible-role-vim
+vim_plugins:
+  - repo: nerdtree
+    name: scrooloose
+  - repo: vim-airline
+    name: vim-airline
+  - repo: vim-colorschemes
+    name: flazz
