@@ -1,6 +1,5 @@
 - name: Phil's Default Vim Play
-  hosts: localhost
-  connection: local
+  hosts: all
   gather_facts: true
   roles:
     - .
