@@ -1,4 +1,9 @@
 ---
+- name: Apt-get update
+  become: true
+  become_method: sudo
+  shell: apt-get update
+
 - name: Install some python packages
   become: true
   become_method: sudo
