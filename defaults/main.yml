@@ -6,3 +6,4 @@ vim_plugins:
     name: vim-airline
   - repo: vim-colorschemes
     name: flazz
+...

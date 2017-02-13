@@ -5,11 +5,17 @@ Phil's Vim setup
 Requirements
 ------------
 
-* `git`
+None. The role installs vim and git.
+
 
 Role Variables
 --------------
 
+List of plugins to install. Name refers to the github author. Repo refers to the project name in github. Defaults to a few plugins.
+
+    vim_plugins:
+        - repo: nerdtree
+          name: scrooloose
 
 
 Dependencies
@@ -21,13 +27,26 @@ None
 Example Playbook
 ----------------
 
-To run the local playbook, issue the following command.
-`ansible-playbook playbook.yml --ask-sudo-pass`
+    ---
+    - hosts: localhost
+      remote_user: root
+      vars:
+        vim_plugins:
+          - repo: nerdtree
+            name: scrooloose
+          - repo: vim-airline
+            name: vim-airline
+          - repo: vim-colorschemes
+            name: flazz
+      roles:
+        - ansible-role-vim
+    ...
+
 
 License
 -------
 
-MIT
+GPLv3
 
 Author Information
 ------------------

@@ -1,5 +1,4 @@
 ---
-# Variable configuration
 - name: Include OS-specific variables
   include_vars: "{{ ansible_os_family }}.yml"
   when: ansible_os_family != "RedHat"
@@ -13,7 +12,7 @@
     vim_package: "{{ __vim_package }}"
   when: vim_package is not defined
 
-- name: Install packages
+- name: Install vim and git
   become: true
   become_method: sudo
   package:
@@ -54,7 +53,7 @@
   when: stat_vim.stat.islnk is undefined and stat_vim.stat.islnk == False
 
 - name: Install Pathogen
-  get_url: 
+  get_url:
     url: https://tpo.pe/pathogen.vim
     dest: "~/.vim/autoload/pathogen.vim"
     mode: 0664
@@ -66,3 +65,4 @@
     update: no
   with_items:
     - "{{ vim_plugins }}"
+...

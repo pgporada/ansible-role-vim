@@ -1,5 +1,14 @@
 ---
 - hosts: localhost
   remote_user: root
+  vars:
+    vim_plugins:
+      - repo: nerdtree
+        name: scrooloose
+      - repo: vim-airline
+        name: vim-airline
+      - repo: vim-colorschemes
+        name: flazz
   roles:
     - ansible-role-vim
+...
