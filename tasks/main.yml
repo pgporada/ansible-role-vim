@@ -51,6 +51,13 @@
     path: "~/.vimrc"
   when: stat_vim.stat.islnk is undefined and stat_vim.stat.islnk == False
 
+- name: Get my vimrc
+  get_url:
+    url: "{{ vim_upstream_vimrc }}"
+    dest: "~/.vimrc"
+    mode: 0644
+  when: vim_use_upstream_vimrc is defined and vim_use_upstream_vimrc
+
 - name: Install Pathogen
   get_url:
     url: https://tpo.pe/pathogen.vim
