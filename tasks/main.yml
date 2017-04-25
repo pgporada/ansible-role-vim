@@ -56,6 +56,7 @@
     url: "{{ vim_upstream_vimrc }}"
     dest: "~/.vimrc"
     mode: 0644
+    force: yes
   when: vim_use_upstream_vimrc is defined and vim_use_upstream_vimrc
 
 - name: Install Pathogen
