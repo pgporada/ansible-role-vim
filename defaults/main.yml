@@ -7,6 +7,8 @@ vim_plugins:
     name: scrooloose
   - repo: vim-airline
     name: vim-airline
+  - repo: vim-airline-themes
+    name: vim-airline
   - repo: vim-colorschemes
     name: flazz
 ...
