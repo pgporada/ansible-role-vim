@@ -40,17 +40,6 @@
     - syntax
     - tools
 
-- name: Check if .vimrc exists
-  stat:
-    path: "~/.vimrc"
-  register: stat_vim
-
-- name: Ensure .vimrc exists
-  file:
-    state: touch
-    path: "~/.vimrc"
-  when: stat_vim.stat.islnk is undefined and stat_vim.stat.islnk == False
-
 - name: Get my vimrc
   get_url:
     url: "{{ vim_upstream_vimrc }}"
