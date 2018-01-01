@@ -3,7 +3,7 @@
   include_vars: "{{ ansible_os_family }}.yml"
 
 - name: Install helper packages for specific OS Families
-  include: setup_Debian.yml
+  include_tasks: setup_Debian.yml
   when: ansible_os_family == "Debian"
 
 - name: Define vim packages
