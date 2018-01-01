@@ -2,7 +2,7 @@ galaxy_info:
   author: Phil Porada
   description: Installs vim and some plugins that I find useful.
   company: MyTallGuy
-  license: GPL v3
+  license: GPL v2
   min_ansible_version: 2.2
   github_branch: master
   platforms:
@@ -33,9 +33,9 @@ galaxy_info:
     #  - 12.3
     #  - 13.1
     #  - 13.2
-    #- name: MacOSX
-    #  versions:
-    #  - all
+    - name: MacOSX
+      versions:
+        - all
     #  - 10.10
     #  - 10.11
     #  - 10.12

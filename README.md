@@ -1,11 +1,11 @@
 Role Name
 =========
-Phil's Vim setup
+Phil's setup to install vim and git.
 
 Requirements
 ------------
 
-None. The role installs vim and git.
+None for systems running on the Linux kernel. For OSX you will need Homebrew.
 
 
 Role Variables
