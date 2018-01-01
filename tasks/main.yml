@@ -18,24 +18,24 @@
     name: "{{ item }}"
     state: present
   with_items:
-      - "{{ vim_package }}"
-      - git
+    - "{{ vim_package }}"
+    - git
   when: ansible_os_family != "Darwin"
 
 - name: Install vim and git for OSX
   homebrew:
     name: "{{ item }}"
     state: present
-    update_homebrew: no
+    update_homebrew: "no"
   with_items:
-      - "{{ vim_package }}"
-      - git
+    - "{{ vim_package }}"
+    - git
   when: ansible_os_family == "Darwin"
 
 - name: Setup the vim config folders
   file:
     state: directory
-    recurse: yes
+    recurse: "yes"
     path: "~/.vim/{{ item }}"
   with_items:
     - autoload
@@ -53,10 +53,10 @@
 
 - name: Get my vimrc
   get_url:
-url: "{{ vim_upstream_vimrc }}"
+    url: "{{ vim_upstream_vimrc }}"
     dest: "~/.vimrc"
     mode: 0644
-    force: yes
+    force: "yes"
   when: vim_use_upstream_vimrc is defined and vim_use_upstream_vimrc
 
 - name: Install Pathogen
@@ -69,7 +69,7 @@ url: "{{ vim_upstream_vimrc }}"
   git:
     repo: "https://github.com/{{ item.name }}/{{ item.repo }}.git"
     dest: "~/.vim/bundle/{{ item.repo }}"
-    update: no
+    update: "no"
   with_items:
     - "{{ vim_plugins }}"
 ...
