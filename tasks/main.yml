@@ -20,6 +20,17 @@
   with_items:
       - "{{ vim_package }}"
       - git
+  when: ansible_os_family != "Darwin"
+
+- name: Install vim and git for OSX
+  homebrew:
+    name: "{{ item }}"
+    state: present
+    update_homebrew: no
+  with_items:
+      - "{{ vim_package }}"
+      - git
+  when: ansible_os_family == "Darwin"
 
 - name: Setup the vim config folders
   file:
@@ -42,7 +53,7 @@
 
 - name: Get my vimrc
   get_url:
-    url: "{{ vim_upstream_vimrc }}"
+url: "{{ vim_upstream_vimrc }}"
     dest: "~/.vimrc"
     mode: 0644
     force: yes
