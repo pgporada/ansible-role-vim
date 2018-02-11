@@ -1,6 +1,19 @@
 ---
 - hosts: localhost
   connection: local
+
+  vars:
+    vim_use_upstream_vimrc: True
+    vim_plugins:
+      - repo: nerdtree
+        name: scrooloose
+      - repo: vim-airline
+        name: vim-airline
+      - repo: vim-airline-themes
+        name: vim-airline
+      - repo: vim-colorschemes
+        name: flazz
+
   roles:
     - ../ansible-role-vim
 ...

@@ -32,7 +32,7 @@
     - git
   when: ansible_os_family == "Darwin"
 
-- name: Setup the vim config folders
+- name: Setup various vim config folders
   file:
     state: directory
     recurse: "yes"
@@ -51,7 +51,7 @@
     - syntax
     - tools
 
-- name: Get my vimrc
+- name: Install custom vimrc dotfile
   get_url:
     url: "{{ vim_upstream_vimrc }}"
     dest: "~/.vimrc"
@@ -59,7 +59,7 @@
     force: "yes"
   when: vim_use_upstream_vimrc is defined and vim_use_upstream_vimrc
 
-- name: Install Pathogen
+- name: Install Pathogen to manage vim plugins
   get_url:
     url: https://tpo.pe/pathogen.vim
     dest: "~/.vim/autoload/pathogen.vim"

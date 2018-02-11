@@ -1,11 +1,7 @@
 ---
-- name: Apt-get update
+- name: Apt update
   become: true
   become_method: sudo
-  shell: apt-get update
-
-- name: Install some python packages
-  become: true
-  become_method: sudo
-  shell: apt-get install -y python-apt
+  apt:
+    update_cache: "True"
 ...

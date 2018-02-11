@@ -4,19 +4,22 @@ Phil's setup to install vim and git.
 - - - -
 # Usage
 
+Standard usage to install stock vim
+
     git clone https://github.com/pgporada/ansible-role-vim.git
-    ansible-playbook local_playbook.yml
+    ansible-playbook local_playbook.yml --ask-become-pass
 
-- - - -
-# Notes
-None for systems running on the Linux kernel. For OSX you will need Homebrew.
 
-Name refers to the github author. Repo refers to the project name in github. Defaults to a few plugins that I enjoy.
+To define your own set of plugins to install
 
     vim_plugins:
         - repo: nerdtree
           name: scrooloose
 
 - - - -
+# Notes
+For OSX you will need Homebrew yourself before this role will work.
+
+- - - -
 # License and Author Information
-GPLv3, [Phil Porada](https://philporada.com)
+GPLv2, [Phil Porada](https://philporada.com)

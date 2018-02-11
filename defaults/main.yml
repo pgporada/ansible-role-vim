@@ -1,14 +1,14 @@
 ---
-vim_use_upstream_vimrc: True
+vim_use_upstream_vimrc: False
 vim_upstream_vimrc: https://raw.githubusercontent.com/pgporada/dotfiles/master/.vimrc
 
-vim_plugins:
-  - repo: nerdtree
-    name: scrooloose
-  - repo: vim-airline
-    name: vim-airline
-  - repo: vim-airline-themes
-    name: vim-airline
-  - repo: vim-colorschemes
-    name: flazz
+vim_plugins: []
+  #- repo: nerdtree
+  #  name: scrooloose
+  #- repo: vim-airline
+  #  name: vim-airline
+  #- repo: vim-airline-themes
+  #  name: vim-airline
+  #- repo: vim-colorschemes
+  #  name: flazz
 ...
