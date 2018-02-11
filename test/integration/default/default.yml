@@ -1,17 +1,21 @@
 ---
-- hosts: all
+- hosts: localhost
+  connection: local
   gather_facts: true
   vars:
     vim_use_upstream_vimrc: "True"
     vim_plugins:
       - repo: nerdtree
-        name: scrooloose
+        author: scrooloose
       - repo: vim-airline
-        name: vim-airline
+        author: vim-airline
       - repo: vim-airline-themes
-        name: vim-airline
+        author: vim-airline
       - repo: vim-colorschemes
-        name: flazz
+        author: flazz
+      - repo: vim-bats
+        author: markcornick
+
   roles:
     - ansible-role-vim
 ...

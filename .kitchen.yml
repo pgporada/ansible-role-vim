@@ -23,6 +23,14 @@ platforms:
       provision: true
       vagrantfiles:
         - .vagrant-centos.rb
+  - name: debian-stretch
+    driver:
+      box: debian/stretch64
+      provision: true
+      vagrantfiles:
+        - .vagrant-debian.rb
+      custom_pre_install_command: >
+              export DEBIAN_FRONTEND=noninteractive
 
 suites:
   - name: default

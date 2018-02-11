@@ -4,4 +4,5 @@
   become_method: sudo
   apt:
     update_cache: "True"
+  changed_when: false
 ...

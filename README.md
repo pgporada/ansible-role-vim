@@ -16,6 +16,16 @@ To define your own set of plugins to install
         - repo: nerdtree
           name: scrooloose
 
+To test your changes using `kitchen`
+
+    sudo yum install ruby rubygems
+    gem install bundler
+    bundle update
+    bundle exec kitchen create
+    bundle exec kitchen converge
+    bundle exec kitchen verify
+    bundle exec kitchen destroy
+
 - - - -
 # Notes
 For OSX you will need Homebrew yourself before this role will work.
