@@ -2,6 +2,11 @@
 vim_use_upstream_vimrc: "False"
 vim_upstream_vimrc: https://raw.githubusercontent.com/pgporada/dotfiles/master/.vimrc
 
+# vim_vimrc: |
+#    "execute pathogen#infect()"
+#    "set nu"
+#    "set rule"
+
 vim_plugins: []
 # - repo: nerdtree
 #   name: scrooloose

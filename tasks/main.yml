@@ -51,13 +51,20 @@
     - syntax
     - tools
 
-- name: Install custom vimrc dotfile
+- name: Install custom vimrc from URL
   get_url:
     url: "{{ vim_upstream_vimrc }}"
     dest: "~/.vimrc"
     mode: 0644
     force: "yes"
-  when: vim_use_upstream_vimrc is defined and vim_use_upstream_vimrc
+  when: vim_use_upstream_vimrc|bool and vim_use_upstream_vimrc is defined
+
+- name: Configure vimrc through this role
+  copy:
+    content: "{{ vim_vimrc }}"
+    dest: "~/.vimrc"
+    mode: 0644
+  when: not vim_use_upstream_vimrc|bool and vim_vimrc is defined
 
 - name: Install Pathogen to manage vim plugins
   get_url:
