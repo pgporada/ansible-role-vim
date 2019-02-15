@@ -76,7 +76,7 @@
   git:
     repo: "https://github.com/{{ item.author }}/{{ item.repo }}.git"
     dest: "~/.vim/bundle/{{ item.repo }}"
-    update: "no"
+    update: "yes"
   with_items:
     - "{{ vim_plugins }}"
 ...
