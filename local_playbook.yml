@@ -15,6 +15,10 @@
         author: flazz
       - repo: vim-bats
         author: markcornick
+      - repo: vim-go
+        author: fatih
+      - repo: vim-hashicorp-tools
+        author: hashivim
 
   roles:
     - ../ansible-role-vim
