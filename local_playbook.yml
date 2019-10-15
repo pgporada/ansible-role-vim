@@ -19,6 +19,16 @@
         author: fatih
       - repo: vim-hashicorp-tools
         author: hashivim
+      - repo: vim-mtail
+        author: pgporada
+      - repo: vim-go
+        author: fatih
+      - repo: vim-HiLinkTrace
+        author: gerw
+      - repo: vim-jinja
+        author: lepture
+      - repo: vim-systemd-syntax
+        author: Matt-Deacalion
 
   roles:
     - ../ansible-role-vim
