@@ -13,8 +13,6 @@
         author: vim-airline
       - repo: vim-colorschemes
         author: flazz
-      - repo: vim-bats
-        author: markcornick
       - repo: vim-go
         author: fatih
       - repo: vim-hashicorp-tools
